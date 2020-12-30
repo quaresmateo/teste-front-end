@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
-
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   ngOnInit(): void {}
 }
