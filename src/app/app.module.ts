@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeComponent } from './views/home/home.component';
 import { ActiveUsersComponent } from './views/active-users/active-users.component';
+import { LastSearchesComponent } from './views/last-searches/last-searches.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ActiveUsersComponent } from './views/active-users/active-users.componen
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ActiveUsersComponent
+    ActiveUsersComponent,
+    LastSearchesComponent
   ],
   imports: [
     BrowserModule,
