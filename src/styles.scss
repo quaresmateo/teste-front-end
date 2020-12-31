@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 $red: #bf0000;
+$orange: #eb5757;
 
 html,
 body {
@@ -23,6 +24,16 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 1.5rem 0;
+}
+
+.selected {
+  color: $orange !important;
+  font-weight: bolder;
+}
+
+.selected p {
+  color: $orange;
+  font-weight: bold;
 }
 
 h1 {

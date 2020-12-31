@@ -8,28 +8,32 @@
   <span class="spacer"></span>
 
   <span class="title-group">
-    <a routerLink="">
+    <a
+      routerLink=""
+      routerLinkActive="selected"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       <i class="material-icons"> home </i>
       Início
     </a>
   </span>
 
   <span class="title-group">
-    <a routerLink="buscar">
+    <a routerLink="buscar" routerLinkActive="selected">
       <i class="material-icons"> search </i>
       Buscar
     </a>
   </span>
 
   <span class="title-group">
-    <a routerLink="usuarios-ativos">
+    <a routerLink="usuarios-ativos" routerLinkActive="selected">
       <i class="material-icons"> people </i>
       Usuários Ativos
     </a>
   </span>
 
   <span class="title-group">
-    <a routerLink="ultimas-buscas">
+    <a routerLink="ultimas-buscas" routerLinkActive="selected">
       <i class="material-icons"> watch_later </i>
       Buscas recentes
     </a>
