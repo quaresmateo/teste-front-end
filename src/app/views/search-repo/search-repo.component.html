@@ -1,0 +1,11 @@
+<section class="container">
+  <h1>Buscar repositórios</h1>
+  <!-- adicionar oformulario aqui -->
+  <ag-grid-angular
+    style="width: 600px; height: 500px"
+    class="ag-theme-alpine"
+    [rowData]="rowData | async"
+    [columnDefs]="columnDefs"
+  >
+  </ag-grid-angular>
+</section>
