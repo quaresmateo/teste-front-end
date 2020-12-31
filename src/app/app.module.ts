@@ -11,6 +11,7 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeComponent } from './views/home/home.component';
 import { ActiveUsersComponent } from './views/active-users/active-users.component';
 import { LastSearchesComponent } from './views/last-searches/last-searches.component';
+import { SearchRepoComponent } from './views/search-repo/search-repo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LastSearchesComponent } from './views/last-searches/last-searches.compo
     FooterComponent,
     HomeComponent,
     ActiveUsersComponent,
-    LastSearchesComponent
+    LastSearchesComponent,
+    SearchRepoComponent
   ],
   imports: [
     BrowserModule,
