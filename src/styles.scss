@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/ag-grid-community/dist/styles/ag-grid.css';
+@import '../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css';
+
 $red: #bf0000;
-$orange: #eb5757;
+$orange: #e55;
+$dark: #333;
 
 html,
 body {
@@ -23,7 +27,8 @@ body {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 1.5rem 0;
+  height: 100vh;
+  padding: 4rem 0;
 }
 
 .selected {
@@ -40,13 +45,14 @@ h1 {
   font-size: 3rem !important;
   padding-top: 10px;
   font-weight: 550 !important;
+  color: $dark;
 }
 
 @media (max-width: 500px) {
   .container {
     max-width: calc(100% - 20px);
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
 
   h1 {
