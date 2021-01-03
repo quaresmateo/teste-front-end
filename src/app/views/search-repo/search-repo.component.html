@@ -1,7 +1,15 @@
 <section class="container">
   <h1>Buscar repositórios</h1>
 
-  <!-- Formulário -->
+  <div class="md-form md-outline form-lg">
+    <input
+      id="form-lg"
+      class="form-control form-control-lg"
+      type="text"
+      mdbInput
+    />
+    <label for="form-lg">Pesquisar</label>
+  </div>
 
   <!-- Resultado -->
   <ag-grid-angular
@@ -11,4 +19,5 @@
     [columnDefs]="columnDefs"
   >
   </ag-grid-angular>
+  <!-- Formulário -->
 </section>
