@@ -15,6 +15,7 @@ import { ActiveUsersComponent } from './views/active-users/active-users.componen
 import { LastSearchesComponent } from './views/last-searches/last-searches.component';
 import { SearchRepoComponent } from './views/search-repo/search-repo.component';
 import { SearchesComponent } from './components/searches/searches.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SearchesComponent } from './components/searches/searches.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AgGridModule.withComponents([]),
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

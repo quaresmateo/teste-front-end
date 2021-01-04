@@ -1,17 +1,15 @@
 <!-- Formulário -->
 <h1>Buscar repositórios</h1>
-
 <form class="md-form md-outline form-lg">
   <input
     mdbInput
     id="form-lg"
     class="form-control form-control-lg"
     type="text"
-    name="q"
-    [(ngModel)]="q"
+    name="text"
+    [(ngModel)]="text"
   />
   <label for="form-lg">Pesquisar</label>
-  {{ q }}
 </form>
 <!-- Resultado -->
 <ag-grid-angular

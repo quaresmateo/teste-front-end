@@ -2,6 +2,7 @@ import { User } from './user/user.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,10 @@ export class SearchesService {
     params = params.append('order', order);
     params = params.append('sort', sort);
 
-    return this.http.get<User[]>(url, {
-      params
-    });
+    return this.http
+      .get<User[]>(url, {
+        params
+      })
+      .pipe(map((obj) => obj));
   }
 }
