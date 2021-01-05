@@ -1,8 +1,7 @@
-import { User } from './user/user.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {} from 'rxjs/operators';
+import { Users } from './user/users.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +22,7 @@ export class SearchesService {
     order?: string;
     page?: string;
     per_page?: string;
-  }): Observable<User[]> {
+  }): Observable<Users> {
     const url = `${this.baseUrl}/search/users`;
     let params = new HttpParams();
     params = params.append('q', query);
@@ -32,7 +31,7 @@ export class SearchesService {
     params = params.append('order', order);
     params = params.append('sort', sort);
 
-    return this.http.get<User[]>(url, {
+    return this.http.get<Users>(url, {
       params
     });
   }

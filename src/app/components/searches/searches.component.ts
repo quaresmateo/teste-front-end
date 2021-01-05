@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Component, OnInit } from '@angular/core';
 import { SearchesService } from './searches.service';
-import { User } from './user/user.model';
+import { Users } from './user/users.model';
 
 @Component({
   selector: 'app-searches',
@@ -11,9 +11,11 @@ import { User } from './user/user.model';
 })
 export class SearchesComponent implements OnInit {
   constructor(private services: SearchesService) {}
-  users: User[];
+  users: Users;
   text: string;
   sort: string;
+  gridOptions;
+  rowData;
 
   columnDefs = [
     { field: 'id' },
@@ -21,25 +23,19 @@ export class SearchesComponent implements OnInit {
     { field: 'repos_url', sortable: true }
   ];
 
-  rowData$;
-
   ngOnInit(): void {
-    this.services
-      .getUsers({ query: this.text, sort: this.sort })
-      .subscribe((users: User[]) => {
-        this.users = users;
-        console.log(this.users);
-        this.rowData$ = this.users;
-      });
+    if (this.text !== undefined) {
+      this.find('');
+    }
   }
 
   find(value: string) {
     this.text = value;
     this.services
       .getUsers({ query: this.text, sort: this.sort })
-      .subscribe((users: User[]) => {
+      .subscribe((users: Users) => {
         this.users = users;
-        this.rowData$ = this.users;
+        this.rowData = this.users.items;
       });
   }
 }
