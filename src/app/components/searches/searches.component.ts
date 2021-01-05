@@ -1,11 +1,6 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchesService } from './searches.service';
 import { User } from './user/user.model';
 
@@ -14,36 +9,37 @@ import { User } from './user/user.model';
   templateUrl: './searches.component.html',
   styleUrls: ['./searches.component.scss']
 })
-export class SearchesComponent implements OnInit, OnChanges {
+export class SearchesComponent implements OnInit {
   constructor(private services: SearchesService) {}
   users: User[];
-
-  @Input() text: string;
-
+  text: string;
   sort: string;
+
   columnDefs = [
     { field: 'id' },
     { field: 'login', filter: true },
     { field: 'repos_url', sortable: true }
   ];
-  rowData: unknown;
+
+  rowData$;
 
   ngOnInit(): void {
     this.services
-      .getUsers(this.text, this.sort)
-      .pipe((obj) => obj)
-      .subscribe((users) => {
+      .getUsers({ query: this.text, sort: this.sort })
+      .subscribe((users: User[]) => {
         this.users = users;
-        this.rowData = this.users;
+        console.log(this.users);
+        this.rowData$ = this.users;
       });
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  find(value: string) {
+    this.text = value;
     this.services
-      .getUsers(changes.text.currentValue, this.sort)
-      .subscribe((users) => {
+      .getUsers({ query: this.text, sort: this.sort })
+      .subscribe((users: User[]) => {
         this.users = users;
-        this.rowData = this.users;
+        this.rowData$ = this.users;
       });
   }
 }

@@ -2,7 +2,7 @@ import { User } from './user/user.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +11,19 @@ export class SearchesService {
   constructor(private http: HttpClient) {}
   baseUrl = 'http://api.github.com';
 
-  getUsers(
-    query: string,
-    sort: string,
+  getUsers({
+    query,
+    sort,
     order = 'desc',
     page = '1',
     per_page = '10'
-  ): Observable<User[]> {
+  }: {
+    query: string;
+    sort: string;
+    order?: string;
+    page?: string;
+    per_page?: string;
+  }): Observable<User[]> {
     const url = `${this.baseUrl}/search/users`;
     let params = new HttpParams();
     params = params.append('q', query);
@@ -26,10 +32,8 @@ export class SearchesService {
     params = params.append('order', order);
     params = params.append('sort', sort);
 
-    return this.http
-      .get<User[]>(url, {
-        params
-      })
-      .pipe(map((obj) => obj));
+    return this.http.get<User[]>(url, {
+      params
+    });
   }
 }
