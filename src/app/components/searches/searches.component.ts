@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { SearchesService } from './searches.service';
 import { Users } from './user/users.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searches',
@@ -11,14 +12,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./searches.component.scss']
 })
 export class SearchesComponent implements OnInit {
-  constructor(private services: SearchesService) {}
   users: Users;
   text = '';
   sort: string;
   rowData;
   minLength;
   validatingForm: FormGroup;
-
   columnDefs = [
     {
       field: 'atavar_url',
@@ -44,6 +43,8 @@ export class SearchesComponent implements OnInit {
       flex: 1
     }
   ];
+
+  constructor(private services: SearchesService, private router: Router) {}
 
   ngOnInit(): void {
     this.validatingForm = new FormGroup({
@@ -72,5 +73,10 @@ export class SearchesComponent implements OnInit {
 
   get input() {
     return this.validatingForm.get('minLength');
+  }
+
+  onRowClicked($event) {
+    const username = $event.data.login;
+    this.router.navigate([`usuario/${username}`]);
   }
 }
