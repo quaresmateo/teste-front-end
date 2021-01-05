@@ -29,9 +29,9 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 900px !important;
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
   padding: 4rem 0;
 }
 
