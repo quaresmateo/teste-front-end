@@ -16,6 +16,7 @@ export class SearchesComponent implements OnInit {
   text = '';
   sort: string;
   rowData;
+  minLength;
   validatingForm: FormGroup;
 
   columnDefs = [
