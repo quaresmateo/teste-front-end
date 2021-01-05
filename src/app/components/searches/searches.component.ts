@@ -36,7 +36,13 @@ export class SearchesComponent implements OnInit {
       }
     },
     { field: 'login', headerName: 'Usuário', width: 150, filter: true },
-    { field: 'repos_url', sortable: true, minWidth: 200, flex: 1 }
+    {
+      field: 'html_url',
+      headerName: 'URL',
+      sortable: true,
+      minWidth: 200,
+      flex: 1
+    }
   ];
 
   ngOnInit(): void {
