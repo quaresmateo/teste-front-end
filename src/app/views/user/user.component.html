@@ -2,20 +2,16 @@
   <h1>{{ title }}</h1>
   <div class="card">
     <div class="flex-row d-flex justify-content-center">
-      <img
-        class="image"
-        src="https://avatars0.githubusercontent.com/u/26655732?v=4"
-        alt="Foto de perfil"
-      />
+      <img class="image" [src]="user.avatar_url" alt="Foto de perfil" />
     </div>
     <div class="name flex-row d-flex justify-content-center">
-      <h2>Teoian Quaresma</h2>
+      <h2>{{ user.name }}</h2>
     </div>
     <div class="username flex-row d-flex justify-content-center">
-      <p>@quaresmateo</p>
+      <p>@{{ user.login }}</p>
     </div>
     <div class="bio flex-row d-flex justify-content-center">
-      <p>Business. Technology. Computer Science graduating.</p>
+      <p>{{ user.bio }}</p>
     </div>
 
     <!-- info -->
@@ -24,15 +20,19 @@
     <div class="row-1 row flex-row d-flex justify-content-center">
       <div class="col-sm m-2 d-flex justify-content-center">
         <mdb-icon fas icon="users"></mdb-icon>
-        11 Seguindo - 12 Seguidores
+        {{ user.following }} Seguindo - {{ user.followers }} Seguidores
       </div>
       <div class="col-sm m-2 d-flex justify-content-center">
-        <mdb-icon fas icon="folder"></mdb-icon> 25 Repositórios
+        <mdb-icon fas icon="folder"></mdb-icon>
+        {{ user.public_repos }} Repositórios
       </div>
-      <div class="col-sm m-2 d-flex justify-content-center">
+      <div
+        *ngIf="user.company"
+        class="col-sm m-2 d-flex justify-content-center"
+      >
         <div class="row">
           <mdb-icon fas icon="building"></mdb-icon>
-          SEDEPTI
+          {{ user.company }}
         </div>
       </div>
     </div>
@@ -40,17 +40,21 @@
 
     <!-- row 2 -->
     <div class="row-2 row flex-row d-flex justify-content-center">
-      <div class="col-sm m-2 d-flex justify-content-center">
+      <div
+        *ngIf="user.location"
+        class="col-sm m-2 d-flex justify-content-center"
+      >
         <mdb-icon fas icon="map-marker-alt"></mdb-icon>
-        Belém - PA
+        {{ user.location }}
       </div>
-      <div class="col-sm m-2 d-flex justify-content-center">
+      <div *ngIf="user.blog" class="col-sm m-2 d-flex justify-content-center">
         <mdb-icon fas icon="link"></mdb-icon>
-        <a href="https://teoian.com">https://teoian.com</a>
+        <a [href]="user.blog">{{ user.blog }}</a>
       </div>
       <div class="col-sm m-2 d-flex justify-content-center">
         <div class="row">
-          <mdb-icon fas icon="code"></mdb-icon> 0 Gists Públicos
+          <mdb-icon fas icon="code"></mdb-icon> {{ user.public_gists }} Gists
+          Públicos
         </div>
       </div>
     </div>

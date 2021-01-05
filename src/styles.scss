@@ -10,11 +10,8 @@ $dark: #1c2331 !default;
   color: $dark;
 }
 
-a {
-  color: $dark !important;
-}
 a:hover {
-  color: $red !important;
+  color: $orange !important;
 }
 
 html,

@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from './user/user.model';
 import { Users } from './user/users.model';
 
 @Injectable({
@@ -34,5 +35,10 @@ export class SearchesService {
     return this.http.get<Users>(url, {
       params
     });
+  }
+
+  getUser(username: string): Observable<User> {
+    const url = `${this.baseUrl}/users/${username}`;
+    return this.http.get<User>(url);
   }
 }

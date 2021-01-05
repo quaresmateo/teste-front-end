@@ -6,6 +6,10 @@ $grey: #1c1f25;
   text-align: center;
 }
 
+a {
+  color: $grey;
+}
+
 .image {
   width: 10rem;
   height: 10rem;
@@ -15,7 +19,7 @@ $grey: #1c1f25;
 
 .card {
   margin-top: 55px;
-  padding: 40px 0px;
+  padding: 40px 60px;
   box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.25);
   border-radius: 7.64444px;
 }
@@ -45,4 +49,10 @@ row-1 div {
 
 .bio {
   @include grey-font;
+}
+
+@media (max-width: 500px) {
+  .card {
+    padding: 40px 30px;
+  }
 }
