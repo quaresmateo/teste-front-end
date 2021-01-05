@@ -15,7 +15,7 @@ export class UserComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {
     this.route.params.subscribe((params) => (this.username = params.username));
-    this.title = `Repositórios de ${this.username}`;
+    this.title = `Repositórios de @${this.username}`;
   }
 
   ngOnInit(): void {}
