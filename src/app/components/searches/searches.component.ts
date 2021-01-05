@@ -20,8 +20,22 @@ export class SearchesComponent implements OnInit {
   validatingForm: FormGroup;
 
   columnDefs = [
-    { field: 'id' },
-    { field: 'login', filter: true },
+    {
+      field: 'atavar_url',
+      headerName: '',
+      width: 50,
+      cellRenderer: function (params) {
+        return `
+          <img 
+            style="border-radius: 50%" 
+            src="${params.data.avatar_url}" 
+            width="30" 
+            height="30"
+          />
+        `;
+      }
+    },
+    { field: 'login', headerName: 'Usuário', width: 150, filter: true },
     { field: 'repos_url', sortable: true, minWidth: 200, flex: 1 }
   ];
 
