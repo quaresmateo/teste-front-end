@@ -18,9 +18,9 @@ export class SearchesComponent implements OnInit {
   rowData;
 
   columnDefs = [
-    { field: 'id' },
-    { field: 'login', filter: true },
-    { field: 'repos_url', sortable: true }
+    { field: 'id', flex: 1 },
+    { field: 'login', filter: true, flex: 1 },
+    { field: 'repos_url', sortable: true, flex: 1 }
   ];
 
   ngOnInit(): void {
