@@ -4,6 +4,7 @@ import { LastSearchesComponent } from './views/last-searches/last-searches.compo
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchRepoComponent } from './views/search-repo/search-repo.component';
+import { UserComponent } from './views/user/user.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'buscar',
     component: SearchRepoComponent
+  },
+  {
+    path: 'usuario/:username',
+    component: UserComponent
   }
 ];
 
