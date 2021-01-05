@@ -1,0 +1,23 @@
+<!-- Formulário -->
+<h1>Buscar repositórios</h1>
+<form class="md-form md-outline form-lg">
+  <input
+    #search
+    mdbInput
+    id="form-lg"
+    class="form-control form-control-lg"
+    type="text"
+    name="text"
+    (keyup.enter)="find(search.value)"
+  />
+  <label for="form-lg">Pesquisar</label>
+</form>
+
+<!-- Resultado -->
+<ag-grid-angular
+  style="width: 100%; height: 500px"
+  class="ag-theme-alpine"
+  [columnDefs]="columnDefs"
+  [rowData]="rowData"
+>
+</ag-grid-angular>

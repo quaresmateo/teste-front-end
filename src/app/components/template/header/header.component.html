@@ -1,41 +1,64 @@
-<mat-toolbar class="header" color="primary">
-  <span>
-    <a routerLink="">
-      <img class="logo" src="assets/images/logo.png" alt="logo" />
-    </a>
-  </span>
+<!--Navbar-->
+<mdb-navbar
+  SideClass="navbar navbar-expand-lg navbar-dark unique-color-dark"
+  [containerInside]="false"
+>
+  <!-- Navbar brand -->
+  <mdb-navbar-brand>
+    <span>
+      <a routerLink="">
+        <img class="logo" src="assets/images/logo.png" alt="logo" />
+      </a>
+    </span>
+  </mdb-navbar-brand>
 
-  <span class="spacer"></span>
+  <!-- Collapsible content -->
+  <links>
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+      <li
+        class="nav-item"
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a class="nav-link waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="home"> </mdb-icon> Início
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
 
-  <span class="title-group">
-    <a
-      routerLink=""
-      routerLinkActive="selected"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      <i class="material-icons"> home </i>
-      Início
-    </a>
-  </span>
+      <li class="nav-item" routerLink="buscar" routerLinkActive="active">
+        <a class="nav-link waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="search"> </mdb-icon> Buscar
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
 
-  <span class="title-group">
-    <a routerLink="buscar" routerLinkActive="selected">
-      <i class="material-icons"> search </i>
-      Buscar
-    </a>
-  </span>
+      <li
+        class="nav-item"
+        routerLink="usuarios-ativos"
+        routerLinkActive="active"
+      >
+        <a class="nav-link waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="users"> </mdb-icon> Usuários
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
 
-  <span class="title-group">
-    <a routerLink="usuarios-ativos" routerLinkActive="selected">
-      <i class="material-icons"> people </i>
-      Usuários Ativos
-    </a>
-  </span>
-
-  <span class="title-group">
-    <a routerLink="ultimas-buscas" routerLinkActive="selected">
-      <i class="material-icons"> watch_later </i>
-      Buscas recentes
-    </a>
-  </span>
-</mat-toolbar>
+      <li
+        class="nav-item"
+        routerLink="ultimas-buscas"
+        routerLinkActive="active"
+      >
+        <a class="nav-link waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="clock"> </mdb-icon> Recentes
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
+<!--/.Navbar-->

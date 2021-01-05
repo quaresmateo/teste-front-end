@@ -2,9 +2,13 @@
 @import '../node_modules/ag-grid-community/dist/styles/ag-grid.css';
 @import '../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css';
 
-$red: #bf0000;
-$orange: #e55;
-$dark: #333;
+$red: #bf0000 !default;
+$orange: #e55 !default;
+$dark: #1c2331 !default;
+
+@mixin color-dark {
+  color: $dark;
+}
 
 html,
 body {

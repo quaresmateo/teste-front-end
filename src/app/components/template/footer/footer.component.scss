@@ -1,11 +1,16 @@
-.footer {
-  position: relative;
-  bottom: 0;
-  display: flex;
-  justify-content: flex-end;
+$dark: #1c2331;
+$orange: #e55 !default;
+
+.footer > div,
+.footer > div > a {
+  color: $dark;
 }
 
-.footer > span {
-  font-weight: 300;
-  font-size: 1rem;
+.footer > div > a {
+  font-weight: 500;
+  color: $dark;
+}
+
+.red {
+  color: $orange;
 }
