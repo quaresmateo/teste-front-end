@@ -10,6 +10,10 @@ $dark: #1c2331 !default;
   color: $dark;
 }
 
+a:hover {
+  color: $orange !important;
+}
+
 html,
 body {
   height: 100%;
@@ -29,9 +33,9 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 900px !important;
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
   padding: 4rem 0;
 }
 

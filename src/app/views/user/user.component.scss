@@ -1,0 +1,58 @@
+$grey: #1c1f25;
+
+@mixin grey-font {
+  font-size: 1.2rem;
+  color: #1c1f25;
+  text-align: center;
+}
+
+a {
+  color: $grey;
+}
+
+.image {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card {
+  margin-top: 55px;
+  padding: 40px 60px;
+  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 7.64444px;
+}
+
+.row-1 {
+  margin-top: 40px;
+}
+
+row-1 div {
+  text-align: center;
+}
+
+.row-1 .fa,
+.row-1 .fas,
+.row-2 .fa,
+.row-2 .fas {
+  margin-right: 10px;
+}
+
+.name {
+  margin-top: 30px;
+}
+
+.username {
+  @include grey-font;
+}
+
+.bio {
+  @include grey-font;
+}
+
+@media (max-width: 500px) {
+  .card {
+    padding: 40px 30px;
+  }
+}
