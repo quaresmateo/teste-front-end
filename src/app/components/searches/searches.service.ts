@@ -49,7 +49,7 @@ export class SearchesService {
     per_page = '100'
   }: {
     user: string;
-    sort: string;
+    sort?: string;
     page?: string;
     per_page?: string;
     order?: string;
