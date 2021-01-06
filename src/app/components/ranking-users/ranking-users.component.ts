@@ -16,7 +16,6 @@ export class RankingUsersComponent implements OnInit {
     this.services.getUsers({ query: this.query }).subscribe((users: Users) => {
       this.users = users;
       console.log(users);
-      // this.rowData = this.users.items;
     });
   }
 }
