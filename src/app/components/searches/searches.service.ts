@@ -1,3 +1,4 @@
+import { LocalStorageService } from 'angular-web-storage';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,8 +11,9 @@ import { Users } from './user/users.model';
 })
 export class SearchesService {
   baseUrl = 'http://api.github.com';
+  lastSearches;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private local: LocalStorageService) {}
 
   getUsers({
     query,
@@ -64,5 +66,16 @@ export class SearchesService {
     params = params.append('sort', sort);
 
     return this.http.get<Repos[]>(url, { params });
+  }
+
+  setLastSearches(text: string): void {
+    if (this.lastSearches.length === 5) {
+      this.lastSearches.shift();
+      this.lastSearches.push(text);
+      this.local.set('lastSearches', this.lastSearches);
+    } else {
+      this.lastSearches.push(text);
+      this.local.set('lastSearches', this.lastSearches);
+    }
   }
 }
