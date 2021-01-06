@@ -17,12 +17,20 @@ export class UserComponent implements OnInit {
   user: User;
   rowData;
   columnDefs = [
-    { field: 'name', headerName: 'Nome' },
     {
+      flex: 1,
+      field: 'name',
+      headerName: 'Nome',
+      minWidth: 150
+    },
+    {
+      flex: 1,
       field: 'updated_at',
+      headerName: 'Atualização',
+      minWidth: 130,
       sortable: true,
-      cellRenderer: function (data) {
-        return data.data.updated_at
+      cellRenderer: function (params) {
+        return params.data.updated_at
           .split('T')[0]
           .split('-')
           .reverse()
@@ -30,10 +38,30 @@ export class UserComponent implements OnInit {
       }
     },
     {
-      field: 'html_url',
-      headerName: 'URL',
-      minWidth: 200,
-      flex: 1
+      flex: 1,
+      field: 'homepage',
+      headerName: 'Página',
+      minWidth: 150,
+      cellRenderer: function (params) {
+        return params.data.homepage
+          ? `
+          <mdb-icon fas icon="users"></mdb-icon>
+        <a href="${params.data.homepage}">homepage</a>
+      `
+          : '-';
+      }
+    },
+    {
+      flex: 1,
+      field: 'forks',
+      minWidth: 100,
+      headerName: 'Forks'
+    },
+    {
+      flex: 1,
+      field: 'stargazers_count',
+      minWidth: 100,
+      headerName: 'Estrelas'
     }
   ];
 
