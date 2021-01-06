@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
       flex: 1,
       field: 'name',
       headerName: 'Nome',
-      minWidth: 150
+      minWidth: 200
     },
     {
       flex: 1,
@@ -50,6 +50,12 @@ export class UserComponent implements OnInit {
       `
           : '-';
       }
+    },
+    {
+      flex: 1,
+      field: 'language',
+      minWidth: 150,
+      headerName: 'Linguagem'
     },
     {
       flex: 1,
