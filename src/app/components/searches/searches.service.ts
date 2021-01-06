@@ -9,8 +9,9 @@ import { Users } from './user/users.model';
   providedIn: 'root'
 })
 export class SearchesService {
-  constructor(private http: HttpClient) {}
   baseUrl = 'http://api.github.com';
+
+  constructor(private http: HttpClient) {}
 
   getUsers({
     query,
