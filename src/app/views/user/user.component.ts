@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -18,9 +19,19 @@ export class UserComponent implements OnInit {
   columnDefs = [
     { field: 'name', headerName: 'Nome' },
     {
+      field: 'updated_at',
+      sortable: true,
+      cellRenderer: function (data) {
+        return data.data.updated_at
+          .split('T')[0]
+          .split('-')
+          .reverse()
+          .join('/');
+      }
+    },
+    {
       field: 'html_url',
       headerName: 'URL',
-      sortable: true,
       minWidth: 200,
       flex: 1
     }

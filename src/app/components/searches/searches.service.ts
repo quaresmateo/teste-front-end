@@ -43,7 +43,7 @@ export class SearchesService {
 
   getRepositories({
     user,
-    sort = 'updated_at',
+    sort = 'updated',
     order = 'desc',
     page = '1',
     per_page = '100'
