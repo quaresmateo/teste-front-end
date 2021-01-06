@@ -1,6 +1,6 @@
 import { LocalStorageService } from 'angular-web-storage';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Repos } from './repos/repos.model';
 import { User } from './user/user.model';
@@ -9,11 +9,16 @@ import { Users } from './user/users.model';
 @Injectable({
   providedIn: 'root'
 })
-export class SearchesService {
+export class SearchesService implements OnInit {
   baseUrl = 'http://api.github.com';
   lastSearches;
+  private KEY = 'lastSearches';
 
   constructor(private http: HttpClient, private local: LocalStorageService) {}
+
+  ngOnInit(): void {
+    this.lastSearches = this.local.get(this.KEY);
+  }
 
   getUsers({
     query,
@@ -72,10 +77,10 @@ export class SearchesService {
     if (this.lastSearches.length === 5) {
       this.lastSearches.shift();
       this.lastSearches.push(text);
-      this.local.set('lastSearches', this.lastSearches);
+      this.local.set(this.KEY, this.lastSearches);
     } else {
       this.lastSearches.push(text);
-      this.local.set('lastSearches', this.lastSearches);
+      this.local.set(this.KEY, this.lastSearches);
     }
   }
 }
