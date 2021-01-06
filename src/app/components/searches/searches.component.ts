@@ -53,7 +53,6 @@ export class SearchesComponent implements OnInit {
         Validators.minLength(1)
       ])
     });
-
     if (this.text.length > 0) {
       this.find('');
     }
@@ -68,6 +67,7 @@ export class SearchesComponent implements OnInit {
           this.users = users;
           this.rowData = this.users.items;
         });
+      this.services.setLastSearches(this.text);
     }
   }
 
