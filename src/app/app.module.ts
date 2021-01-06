@@ -17,6 +17,7 @@ import { SearchRepoComponent } from './views/search-repo/search-repo.component';
 import { SearchesComponent } from './components/searches/searches.component';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './views/user/user.component';
+import { RankingUsersComponent } from './components/ranking-users/ranking-users.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserComponent } from './views/user/user.component';
     LastSearchesComponent,
     SearchRepoComponent,
     SearchesComponent,
-    UserComponent
+    UserComponent,
+    RankingUsersComponent
   ],
   imports: [
     AppRoutingModule,

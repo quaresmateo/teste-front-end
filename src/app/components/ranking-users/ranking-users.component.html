@@ -1,0 +1,26 @@
+<!-- Card -->
+
+<div class="row">
+  <mdb-card
+    [routerLink]="['/usuario/' + user.login]"
+    class="col-sm overlay zoom"
+    *ngFor="let user of users.items; let i = index"
+  >
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img [src]="user.avatar_url" alt="Card image cap"></mdb-card-img>
+      <a>
+        <div class="mask"></div>
+      </a>
+    </div>
+    <!--Card content-->
+    <mdb-card-body>
+      <mdb-card-title>
+        <strong>{{ i + 1 }}º</strong>
+        <br />
+        @{{ user.login }}</mdb-card-title
+      >
+    </mdb-card-body>
+  </mdb-card>
+  <!-- Card -->
+</div>

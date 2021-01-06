@@ -1,0 +1,28 @@
+.card {
+  width: 300px;
+  margin: 20px 5px;
+  border: 1px solid #c2c2c2 !important;
+}
+
+.view {
+  border-radius: 50%;
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.row {
+  margin-top: 60px;
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .row {
+    margin: 20px 0;
+  }
+}
