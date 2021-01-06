@@ -14,3 +14,15 @@
 .row {
   margin-top: 60px;
 }
+
+@media (max-width: 500px) {
+  .card {
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .row {
+    margin: 20px 0;
+  }
+}

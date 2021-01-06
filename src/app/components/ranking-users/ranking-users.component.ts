@@ -15,7 +15,6 @@ export class RankingUsersComponent implements OnInit {
   ngOnInit(): void {
     this.services.getUsers({ query: this.query }).subscribe((users: Users) => {
       this.users = users;
-      console.log(users);
     });
   }
 }
