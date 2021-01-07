@@ -1,8 +1,16 @@
+h2 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
 .img-bg {
   width: 100%;
   height: auto;
   background-size: cover;
-  background-image: url('https://trello-attachments.s3.amazonaws.com/5e512004ffea94545b88f3a6/5fec93683ad3423971506cc3/f4f8830f4a1fa2393efa85925f8607ad/bg-teste-front-end.png');
+  background-image: url('../../../assets/images/bg-teste-front-end.png');
 }
 
 @media (max-width: 500px) {
