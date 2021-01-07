@@ -1,3 +1,11 @@
 <section class="container">
   <h1>Buscas recente</h1>
+  <div class="my-5"></div>
+  <mdb-card>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let ls of lastSearches" class="list-group-item">
+        {{ ls }}
+      </li>
+    </ul>
+  </mdb-card>
 </section>

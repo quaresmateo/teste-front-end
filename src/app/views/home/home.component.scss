@@ -1,0 +1,22 @@
+h2 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+.img-bg {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-image: url('../../../assets/images/bg-teste-front-end.png');
+}
+
+@media (max-width: 500px) {
+  .img-bg {
+    width: 100%;
+    background-position: right;
+    height: auto;
+  }
+}
