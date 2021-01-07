@@ -12,6 +12,6 @@ export class LastSearchesComponent implements OnInit {
   constructor(private local: LocalStorageService) {}
 
   ngOnInit(): void {
-    this.lastSearches = this.local.get(this.KEY);
+    this.lastSearches = this.local.get(this.KEY).reverse();
   }
 }
